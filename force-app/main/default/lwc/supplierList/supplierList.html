@@ -1,0 +1,88 @@
+<template>
+
+    <lightning-card class="" title="Available Suppliers">
+
+        <!-- New Supplier Button-->
+        <div class="slds-media__body">
+            <div slot="actions" class="slds-float--right">
+                <lightning-button variant="neutral" label="Suppliers" title="Suppliers" onclick={getSupplierList}
+                    class="slds-m-right_small ">
+                </lightning-button>
+            </div>
+        </div> <br /><br />
+
+        <!--Supplier List table starts-->
+        <template if:true={displaySupplier}>
+            <template if:true={renderTable}>
+                <div class="tableDiv">
+                    <div>
+                        <table aria-describedby="Supplier-list" class="slds-table  slds-table_bordered ">
+
+                            <!--Header of the table-->
+                            <thead>
+                                <tr class="slds-line-height_reset">
+                                    <th class="slds-size_1-of-6 " scope="col">
+                                        <div class="slds-truncate " title="Name">Name</div>
+                                    </th>
+                                    <th class="slds-size_1-of-6 " scope="col">
+                                        <div class="slds-truncate " title="City">City</div>
+                                    </th>
+                                    <th class="slds-size_1-of-6" scope="col">
+                                        <div class="slds-truncate " title="Latitude">Latitude
+                                        </div>
+                                    </th>
+                                    <th class="slds-size_1-of-6 " scope="col">
+                                        <div class="slds-truncate " title="Longitude">Longitude</div>
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <!--Body of the table-->
+                            <tbody>
+                                <template for:each={supplierList} for:item="item" for:index="indexVar">
+                                    <tr key={supplierList.Id} class="slds-hint-parent">
+                                        <td class="slds-size_1-of-6">
+                                            <div>
+                                                {item.Name}
+                                            </div>
+                                        </td>
+                                        <td class="slds-size_1-of-6">
+                                            <div>
+                                                {item.City__c}
+                                            </div>
+                                        </td>
+                                        <td class="slds-size_1-of-6">
+                                            <div>
+                                                {item.Latitude__c}
+                                            </div>
+                                        </td>
+                                        <td class="slds-size_1-of-6">
+                                            <div>
+                                                {item.Longitude__c}
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            <div>
+                                                <lightning-button-icon data-lon={item.Longitude__c} data-lat={item.Latitude__c}
+                                                    icon-name="action:preview" alternative-text="Preview"
+                                                    title="Preview" onclick={mapClick}></lightning-button-icon>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </template>
+
+            <template if:true={displayError}>
+                There is no supplier for current account billing city
+            </template>
+        </template>
+
+    </lightning-card>
+</template>

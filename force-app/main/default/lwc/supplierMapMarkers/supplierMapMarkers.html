@@ -1,0 +1,8 @@
+<template>
+    <lightning-card title="Location of Supplier">
+    <template if:true={renderMap}>
+            <lightning-map map-markers={mapMarkers} zoom-level={zoomLevel}>
+            </lightning-map>      
+    </template>
+</lightning-card>
+</template>
