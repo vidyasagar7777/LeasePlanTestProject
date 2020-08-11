@@ -25,7 +25,6 @@ export default class SupplierList extends LightningElement {
             this.billingCity = this.Account.data.fields.BillingCity.value;
         }
         this.displaySupplier = true;
-
         getSupplierList({ city: this.billingCity })
             .then(result => {
                 this.supplierList = result;
