@@ -20,7 +20,6 @@ public class caseTriggerHandler {
                     acc.Case_Avg_Rating__c =s;
                     updateAccList.add(acc);
                 }
-                
                 try {
                     Database.update(updateAccList);
                 } 
