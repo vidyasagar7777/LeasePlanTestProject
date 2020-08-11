@@ -18,7 +18,7 @@ public class caseTriggerHandler {
                 for (Account acc : [select id from Account where id IN: avgRatingMap.keyset()]){
                     Double s  = avgRatingMap.get(acc.id); 
                     acc.Case_Avg_Rating__c =s;
-                    updateAccList.add(acc);
+                    updateAccList.add(acc); 
                 }
                 try {
                     Database.update(updateAccList);

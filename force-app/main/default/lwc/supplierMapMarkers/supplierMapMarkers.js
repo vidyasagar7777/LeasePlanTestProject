@@ -18,7 +18,6 @@ export default class SupplierMapMarkers extends LightningElement {
     disconnectedCallback() {
         unregisterAllListeners(this);
     }
-
     getLongitude(lon) {
         this.renderMap = true;
         this.Longitude = lon;

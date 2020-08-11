@@ -1,5 +1,4 @@
 public with sharing class supplierController {
-
     
     @AuraEnabled
     public Static List<Supplier__c>  findSuppliers(String city){
