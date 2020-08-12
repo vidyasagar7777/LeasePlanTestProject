@@ -19,7 +19,7 @@ public class caseTriggerHandler {
                     Double s  = avgRatingMap.get(acc.id); 
                     acc.Case_Avg_Rating__c =s;
                     updateAccList.add(acc);
-                }
+                } 
                 
                 try {
                     Database.update(updateAccList);

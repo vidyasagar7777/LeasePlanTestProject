@@ -13,7 +13,7 @@ export default class SupplierList extends LightningElement {
     renderTable;
     displaySupplier = false;
     displayError = false;
-
+ 
     @wire(CurrentPageReference) pageRef;
     /* To get the selected Account Billing city */
     @wire(getRecord, { recordId: '$recordId', fields: [ACCOUNT_BillingCity_FIELD] })

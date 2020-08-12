@@ -14,7 +14,7 @@ const samePageRef = (pageRef1, pageRef2) => {
     .every(key => {
       return obj1[key] === obj2[key];
     });
-};
+}; 
  
 /**
  * Registers a callback for an event

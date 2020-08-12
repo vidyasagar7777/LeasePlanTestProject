@@ -8,7 +8,7 @@ export default class SupplierMapMarkers extends LightningElement {
     zoomLevel = 10;
     Longitude ;
     Latitude ;
-    renderMap =false;
+    renderMap =false; 
 
     connectedCallback() {
         registerListener("latitude", this.getLatitude, this);

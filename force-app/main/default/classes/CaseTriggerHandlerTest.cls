@@ -11,7 +11,7 @@ public class CaseTriggerHandlerTest {
         usr.LanguageLocaleKey = 'en_US';
         usr.LocaleSidKey = 'de_DE_EURO';
         usr.ProfileId = profAdmin.Id;
-        usr.TimeZoneSidKey = 'Europe/Berlin';
+        usr.TimeZoneSidKey = 'Europe/Berlin'; 
         usr.UserName = 'ApexTestUser@test.test';
         insert usr;
     }
