@@ -1,6 +1,6 @@
 trigger CaseUpdateTrigger on Case (after update) {
 
-    caseTriggerHandler controller = new caseTriggerHandler();
+    CaseTriggerHandler controller = new CaseTriggerHandler();
     if (Trigger.isUpdate){
         controller.calculateAvgAcnt(Trigger.new,Trigger.oldMap);
     }
